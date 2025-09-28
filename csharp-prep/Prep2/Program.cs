@@ -5,7 +5,6 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Prep2 World!");
-
         Console.Write("Enter class grade percentage: ");
         var userInput = Int32.Parse(Console.ReadLine());
 
