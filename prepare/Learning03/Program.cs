@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 class Program
 {
@@ -16,5 +17,7 @@ class Program
         Fraction wholenumber2 = new Fraction(1,3);
         Console.WriteLine(wholenumber2.GetDecimalValue());
         Console.WriteLine(wholenumber2.GetFraction());
+
+
     }
 }
