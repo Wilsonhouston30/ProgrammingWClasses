@@ -1,0 +1,5 @@
+1,1 Nephi,4,2,"Therefore let us go up; let us be strong like unto Moses; for he truly spake unto the waters of the Red Sea and they divided hither and thither, and our fathers came through, out of captivity, on dry ground, and the armies of Pharaoh did follow and were drowned in the waters of the Red Sea."
+2,Jeremiah,17,7, "Blessed is the man that trusteth in the Lord, and whose hope the Lord is."
+3,Joel,3,16,"The Lord also shall roar out of Zion, and utter his voice from Jerusalem; and the heavens and the earth shall shake: but the Lord will be the hope of his people, and the strength of the children of Israel."
+4,Psalm,34,4,"I sought the Lord, and he heard me, and delivered me from all my fears."
+5,Romans,15,13,"Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost."

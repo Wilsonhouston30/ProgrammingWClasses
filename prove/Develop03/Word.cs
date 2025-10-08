@@ -1,7 +1,7 @@
 public class Word
 {
     private string _word;
-    private bool _hidden;
+    private string _hidden;
 
     public  Word(string word)
     {
@@ -13,7 +13,7 @@ public class Word
         return _word;
     }
 
-    public bool Hidword()
+    public string Hideword()
     {
         return _hidden;
     }
