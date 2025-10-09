@@ -16,4 +16,16 @@ public class Scripture
         return string.Join(" ", verses.Select(v => v.GetVerse()));
     }
 
+    public bool HideScripture()
+    {
+        bool allhidden = true;
+        foreach (var verse in verses)
+        {
+            if(!verse.HideRandWord())
+            {
+                allhidden = false;
+            }
+        }
+        return allhidden;
+    }
 }

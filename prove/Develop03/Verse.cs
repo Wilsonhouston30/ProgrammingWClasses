@@ -15,5 +15,20 @@ public class Verse
         return string.Join(" ",words.Select(w => w.GetWord()));
     }
 
+    public bool HideRandWord()
+    {
+        Random rand = new Random();
+        bool allhidden = true;
+        foreach (var word in words.Where(w => !w.IsHidden))
+        {
+            if (rand.Next(2) == 0)
+            {
+                word.HideWord();
+            }
+            else
+            allhidden = false;
+        }
+        return allhidden;
+    }
 
 }

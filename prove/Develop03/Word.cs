@@ -1,20 +1,30 @@
 public class Word
 {
-    private string _word;
-    private string _hidden;
 
-    public  Word(string word)
+    private string word; 
+
+    private bool hidden;
+
+     public bool IsHidden => hidden;
+
+
+    public Word(string Word)
     {
-        _word = word;
+        word = Word;
+        hidden = false;
     }
 
     public string GetWord()
     {
-        return _word;
+        return hidden ? new string ('_', word.Length) : word;
     }
-
-    public string Hideword()
+    public bool HideWord()
     {
-        return _hidden;
+        if (!hidden)
+        {
+            hidden = true;
+            return hidden;
+        }
+        return false;
     }
 }
