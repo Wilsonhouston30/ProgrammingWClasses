@@ -1,9 +1,9 @@
 public class Scripture
 {
     private List<Verse> verses = new List<Verse>();
-    public Scripture(string book, int chapter, int verse, string text)
+    public Scripture(string book, string chapter, string verse, string words)
     {
-        verses.Add(new Verse(text));
+        verses.Add(new Verse(words));
     }
 
     public Scripture(string book, int chapter, int startVerse, int endVerse)
