@@ -20,7 +20,7 @@ class Program
         }
 
         int userInput = -1;
-        Goal goal1 = new Goal()
+        Goal goal1 = new Goal();
  
 
         while (userInput != 5)
@@ -32,6 +32,7 @@ class Program
             {
                 Console.WriteLine("Create new Goal");
 
+                goal1.SelectGoal();
 
             }
             else if (userInput ==2)

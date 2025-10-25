@@ -2,13 +2,18 @@ public class CheckListGoal :Goal
 {
     private int _timesCompleted;
 
-    public CheckListGoal(string name, string description, int value, int timesCompleted) : base(name, description,value)
+    public CheckListGoal(string name, string description, int value,int timesCompleted) : base( name, description,value )
     {
-        _timesCompleted = timesCompleted;
+        _timesCompleted = 0;
+        value = 5;
+
     }
 
-    public override int GetPoints()
+    public override void Record()
     {
-        return _value;
+        _timesCompleted++;
+        SetCompleted();
+
+
     }
 }
