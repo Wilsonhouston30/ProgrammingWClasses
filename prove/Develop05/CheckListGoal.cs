@@ -13,7 +13,7 @@ public class CheckListGoal :Goal
     {
         _timesCompleted++;
         SetCompleted();
-
+        Console.WriteLine("Checklist goal completed");
 
     }
 }
