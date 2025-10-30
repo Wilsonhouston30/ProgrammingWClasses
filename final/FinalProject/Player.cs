@@ -60,8 +60,6 @@ public class Player : People
     {
         return _height;
     }
-
-
     public void GetAllPlayerInfo()
     {
         Console.WriteLine("Adding new player:");
@@ -97,8 +95,6 @@ public class Player : People
         return $"{GetFName()} {GetLname()}  #{GetNumber()}  {GetPosition()}";
      
     }
-
-
     public override void Displayinfo()
     {
         Console.WriteLine($"{BasicPlayerInfo()}");

@@ -33,6 +33,7 @@ public class Team
     }
 
 
+
     public void AddPlayer()
     {
         Player player1 = new Player();
@@ -76,6 +77,38 @@ public class Team
 
             }
         }
+    }
+    public void Save()
+    {
+        string fileName = $"{GetTeamName()}_Roster.txt";
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            outputFile.WriteLine($"==== {fileName} ====");
+            outputFile.WriteLine($"Coaches: ");
+            foreach(People people in _players)
+            {
+                
+                if (people is Coach coach)
+                {
+                outputFile.WriteLine($"{coach.GetFName()} {coach.GetLname()}");
+                outputFile.WriteLine();
+                outputFile.WriteLine("____________________");
+                }
+            }
+
+            outputFile.WriteLine();
+            outputFile.WriteLine($"Players: ");
+            foreach(People people in _players)
+            {
+                if (people is Player player)
+                {
+                    outputFile.WriteLine($"{player.GetFName()} {player.GetLname()} #{player.GetNumber()} Pos.{player.GetPosition()}");
+                    outputFile.WriteLine($"Height: {player.GetHeight()}");
+                    outputFile.WriteLine("");
+                }
+            }
+        }
+        Console.WriteLine("Saved");
     }
 
 

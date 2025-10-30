@@ -32,7 +32,7 @@ class Program
                 static void TeamMenu()
                 {
 
-                    string [] menu = ["Add Player", "Add Coach","View Roster", "Remove Player", "Remove Coach", "Back to Menu"];
+                    string [] menu = ["Add Player", "Add Coach","View Roster", "Remove Player", "Remove Coach","Save Roster","Back to Menu"];
                     Console.WriteLine("Team Management");
                     Console.WriteLine("");
                     for(int i = 0; i <menu.Length; i++)
@@ -45,7 +45,7 @@ class Program
                     string teamName = Console.ReadLine();
                     Team team1 = new Team(teamName);
                 int teamManagmentSelection = 0;
-                while (teamManagmentSelection != 6)
+                while (teamManagmentSelection != 7)
                 {
 
                     TeamMenu();                   
@@ -66,16 +66,32 @@ class Program
                     else if (teamManagmentSelection ==4)
                     {
                         Console.WriteLine("Remove Player");
+                        Console.Write("First Name: ");
+                        string fNameRemoved = Console.ReadLine();
+                        Console.Write("Last Name: ");
+                        string lNameRemoved = Console.ReadLine();
+
+                        
+
                     }
                     else if (teamManagmentSelection ==5)
                     {
                         Console.WriteLine("Remove Coach");
                     }
-                    else if ( teamManagmentSelection == 5)
+                    else if ( teamManagmentSelection == 6)
+                    {
+                        team1.Save();
+                    }
+                    else if ( teamManagmentSelection == 7)
                     {
                         Console.WriteLine("Back to Menu");
                         loading1.LoadAnimation();
                     }
+                    else 
+                    {
+                        Console.WriteLine("Invalid input");
+                    }
+
                 }
 
 

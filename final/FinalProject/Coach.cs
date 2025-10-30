@@ -42,19 +42,27 @@ public class Coach : People
         Console.WriteLine();
         Console.Write("first name ->");
         SetFName(Console.ReadLine());
+
         Console.Write("last name ->");
         SetLname(Console.ReadLine());
+
         Console.Write("Years of Experience: ");
         SetExpYrs(int.Parse(Console.ReadLine()));
+
         Console.WriteLine("---Coach ADDED---");
         Console.Write("Hit Enter to continue");
         Console.ReadLine();
 
     }
 
+    public string BasicCoachInfo()
+    {
+        return $"{GetFName()} {GetLname()} Exp. {GetExpYrs()} ";
+    }
+
     public override void Displayinfo()
     {
-        base.Displayinfo();
+        Console.WriteLine($"{BasicCoachInfo()}");
         Console.WriteLine($"Exp {GetExpYrs()}");
         Console.WriteLine($"Accolades{GetAccolades()}");
     }
