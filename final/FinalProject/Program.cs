@@ -41,30 +41,35 @@ class Program
                     }
                 Console.Write("Select one: -> ");
                 }
+                    Console.Write("Team Name:");
+                    string teamName = Console.ReadLine();
+                    Team team1 = new Team(teamName);
                 int teamManagmentSelection = 0;
-                TeamMenu();
-                teamManagmentSelection = int.Parse(Console.ReadLine());
                 while (teamManagmentSelection != 6)
                 {
+
+                    TeamMenu();                   
+                    teamManagmentSelection = int.Parse(Console.ReadLine());
                     if (teamManagmentSelection ==1)
                     {
-
+                        team1.AddPlayer();
                     }
                     else if (teamManagmentSelection ==2)
                     {
-
+                        team1.AddCoach();
                     }
                     else if (teamManagmentSelection ==3)
                     {
-
+                        Console.WriteLine("View Roster");
+                        team1.ShowWholeTeam();
                     }
                     else if (teamManagmentSelection ==4)
                     {
-
+                        Console.WriteLine("Remove Player");
                     }
                     else if (teamManagmentSelection ==5)
                     {
-
+                        Console.WriteLine("Remove Coach");
                     }
                     else if ( teamManagmentSelection == 5)
                     {

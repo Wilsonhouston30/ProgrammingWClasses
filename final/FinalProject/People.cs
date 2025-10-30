@@ -43,11 +43,8 @@ public class People
     }
 
 
-
-
-
-    public void DisplayName()
+    public virtual void  Displayinfo()
     {
-
+        Console.WriteLine($"Name {GetFName()} {GetLname()}");
     }
 }
