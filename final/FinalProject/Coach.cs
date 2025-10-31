@@ -49,7 +49,7 @@ public class Coach : People
         Console.Write("Years of Experience: ");
         SetExpYrs(int.Parse(Console.ReadLine()));
 
-        Console.WriteLine("---Coach ADDED---");
+        Console.WriteLine("---Coach Added---");
         Console.Write("Hit Enter to continue");
         Console.ReadLine();
 

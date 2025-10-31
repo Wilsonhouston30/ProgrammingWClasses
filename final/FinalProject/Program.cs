@@ -18,7 +18,6 @@ class Program
             Console.Write("Select one: -> ");
         }
 
-
         int menuSelection = 0;
         Loading loading1 = new Loading();
 
@@ -32,7 +31,8 @@ class Program
                 static void TeamMenu()
                 {
 
-                    string [] menu = ["Add Player", "Add Coach","View Roster", "Remove Player", "Remove Coach","Save Roster","Back to Menu"];
+                    string [] menu = ["Add Player", "Add Coach","View Roster", "Remove Player", "Remove Coach","Load Roster","Save Roster","Back to Menu"];
+                    Console.WriteLine("");
                     Console.WriteLine("Team Management");
                     Console.WriteLine("");
                     for(int i = 0; i <menu.Length; i++)
@@ -45,44 +45,56 @@ class Program
                     string teamName = Console.ReadLine();
                     Team team1 = new Team(teamName);
                 int teamManagmentSelection = 0;
-                while (teamManagmentSelection != 7)
+                while (teamManagmentSelection != 8)
                 {
 
                     TeamMenu();                   
                     teamManagmentSelection = int.Parse(Console.ReadLine());
                     if (teamManagmentSelection ==1)
                     {
+                        loading1.LoadAnimation();
+                        Console.Clear();
                         team1.AddPlayer();
                     }
                     else if (teamManagmentSelection ==2)
                     {
+                        loading1.LoadAnimation();
+                        Console.Clear();
                         team1.AddCoach();
                     }
                     else if (teamManagmentSelection ==3)
                     {
-                        Console.WriteLine("View Roster");
-                        team1.ShowWholeTeam();
+                        loading1.LoadAnimation();
+                        Console.Clear();
+                        Console.WriteLine("Roster View");
+                        team1.RosterView();
                     }
                     else if (teamManagmentSelection ==4)
                     {
-                        Console.WriteLine("Remove Player");
-                        Console.Write("First Name: ");
-                        string fNameRemoved = Console.ReadLine();
-                        Console.Write("Last Name: ");
-                        string lNameRemoved = Console.ReadLine();
-
-                        
-
+                        loading1.LoadAnimation();
+                        Console.Clear();
+                        team1.RemovePlayer();
                     }
                     else if (teamManagmentSelection ==5)
                     {
-                        Console.WriteLine("Remove Coach");
+                        loading1.LoadAnimation();
+                        Console.Clear();
+                        team1.RemoveCoach();
                     }
-                    else if ( teamManagmentSelection == 6)
+                    else if (teamManagmentSelection ==6)
                     {
+                        loading1.LoadAnimation();
+                        Console.Clear();
+                        team1.LoadTeam();
+                    }
+
+                    else if ( teamManagmentSelection == 7)
+                    {
+                        loading1.LoadAnimation();
+                        Console.Clear();
                         team1.Save();
                     }
-                    else if ( teamManagmentSelection == 7)
+                    else if ( teamManagmentSelection == 8)
                     {
                         Console.WriteLine("Back to Menu");
                         loading1.LoadAnimation();

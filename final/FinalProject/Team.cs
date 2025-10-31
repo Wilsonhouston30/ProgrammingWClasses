@@ -26,13 +26,12 @@ public class Team
 
     public void AddCoach()
     {
+
         Coach coach1 = new Coach();
         coach1.GetCoachInfo();
         _players.Add(coach1);
 
     }
-
-
 
     public void AddPlayer()
     {
@@ -41,9 +40,36 @@ public class Team
         _players.Add(player1);
     }
 
-    public void RemovePlayer(Player player)
+    public void RemovePlayer()
     {
-        _players.Remove(player);
+        for (int i = 0; i< _players.Count; i++)
+        {
+            if (_players[i] is Player player)
+            {
+                Console.WriteLine($"{i}: {player.GetFName()}");
+            }
+        }
+        Console.WriteLine("");
+        Console.Write("Enter number");
+        int removedPlayer = Int32.Parse(Console.ReadLine());
+
+        _players.RemoveAt(removedPlayer);
+    }
+
+    public void RemoveCoach()
+    {
+        for (int i = 0; i< _players.Count; i++)
+        {
+            if (_players[i] is Coach coach)
+            {
+                Console.WriteLine($"{i}: {coach.GetFName()}");
+            }
+        }
+        Console.WriteLine("");
+        Console.Write("Enter number");
+        int removedPlayer = Int32.Parse(Console.ReadLine());
+
+        _players.RemoveAt(removedPlayer);
     }
 
     public List<People> GetPlayer()
@@ -51,7 +77,7 @@ public class Team
         return _players;
     }
 
-    public void ShowWholeTeam()
+    public void RosterView()
     {
         Console.WriteLine($"{GetTeamName()}:");
         Console.WriteLine("");
@@ -60,21 +86,20 @@ public class Team
         {
             if (person is Coach)
             {
+                Console.Write("> ");
                 person.Displayinfo();
-                Console.WriteLine("______________");
+                Console.WriteLine("");
             }
         }
         Console.WriteLine("");
         Console.WriteLine("Players:");
-
         foreach (People person in _players)
         {
             if ( person is Player )
             {
+                Console.Write("> ");
                 person.Displayinfo();
-                Console.WriteLine("______________");
-
-
+                Console.WriteLine("");
             }
         }
     }
@@ -83,8 +108,9 @@ public class Team
         string fileName = $"{GetTeamName()}_Roster.txt";
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
-            outputFile.WriteLine($"==== {fileName} ====");
+            outputFile.WriteLine($"---- {GetTeamName()} -----");
             outputFile.WriteLine($"Coaches: ");
+            outputFile.WriteLine("");
             foreach(People people in _players)
             {
                 
@@ -92,12 +118,12 @@ public class Team
                 {
                 outputFile.WriteLine($"{coach.GetFName()} {coach.GetLname()}");
                 outputFile.WriteLine();
-                outputFile.WriteLine("____________________");
                 }
             }
 
             outputFile.WriteLine();
             outputFile.WriteLine($"Players: ");
+            outputFile.WriteLine("");
             foreach(People people in _players)
             {
                 if (people is Player player)
@@ -108,7 +134,20 @@ public class Team
                 }
             }
         }
-        Console.WriteLine("Saved");
+        Console.WriteLine("Team Saved");
+    }
+
+        public void LoadTeam()
+    {
+        Console.WriteLine();
+        string name = $"{GetTeamName()}_Roster.txt";
+        
+        string [] lines  = System.IO.File.ReadAllLines(name);
+        foreach (string line in lines)
+        {
+            Console.WriteLine(line);
+        }
+        Console.WriteLine("Team Loaded");
     }
 
 

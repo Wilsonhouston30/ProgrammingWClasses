@@ -85,7 +85,7 @@ public class Player : People
         Console.Write("Grade ->");
         SetGrade(Console.ReadLine());
 
-        Console.WriteLine("---PLAYER ADDED---");
+        Console.WriteLine("---Player Added---");
         Console.Write("Hit Enter to continue");
         Console.ReadLine();
     }
