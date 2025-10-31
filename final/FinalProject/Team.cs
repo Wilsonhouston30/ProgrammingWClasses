@@ -137,8 +137,9 @@ public class Team
         Console.WriteLine("Team Saved");
     }
 
-        public void LoadTeam()
+    public void LoadTeam()
     {
+        _players.Clear();
         Console.WriteLine();
         string name = $"{GetTeamName()}_Roster.txt";
         
@@ -148,6 +149,19 @@ public class Team
             Console.WriteLine(line);
         }
         Console.WriteLine("Team Loaded");
+    }
+
+    public List<Player> ListOfPlayers()
+    {
+        List<Player> players = new List<Player>();
+        foreach(People people in _players)
+        {
+            if (people is Player player)
+            {
+                players.Add(player);
+            }
+        }
+        return players;
     }
 
 

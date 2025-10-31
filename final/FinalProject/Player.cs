@@ -93,7 +93,6 @@ public class Player : People
     public string BasicPlayerInfo()
     {
         return $"{GetFName()} {GetLname()}  #{GetNumber()}  {GetPosition()}";
-     
     }
     public override void Displayinfo()
     {
