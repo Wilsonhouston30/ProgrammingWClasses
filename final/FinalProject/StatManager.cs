@@ -14,7 +14,7 @@ public class StatManager
         for (int i = 0; i< players.Count; i++)
         {
             Player player = players[i];
-            Console.WriteLine($" {i}) {player.GetFName()} {player.GetLname()}");
+            Console.WriteLine($" {i}) {player.FName} {player.LName}");
         }
 
         Console.Write("Select Player to enter stats for: ");

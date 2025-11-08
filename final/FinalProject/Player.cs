@@ -22,68 +22,52 @@ public class Player : People
         _height = "N/A";
     }
 
-    public void SetNumber(string number)
+    public string Number
     {
-        _number = number;
+        get{return _number;}
+        set{_number = value;}
     }
 
-    public string GetNumber()
+    public string Position
     {
-        return _number;    
+        get{return _position;}
+        set{_position = value;}
     }
 
-    public void SetPosition(string position)
+    public string Grade
     {
-        _position = position;
+        get{return _grade;}
+        set{_grade = value;}
     }
-    public string GetPosition()
+    public string Height
     {
-        return _position;
-    }
-
-    public void SetGrade(string grade)
-    {
-        _grade = grade;
-    }
-
-    public string GetGrade()
-    {
-        return _grade;
-    }
-
-    public void SetHeight(string height)
-    {
-        _height = height;
-    }
-
-    public string GetHeight()
-    {
-        return _height;
+        get{return _height;}
+        set{_height = value;}
     }
     public void GetAllPlayerInfo()
     {
         Console.WriteLine("Adding new player:");
         Console.WriteLine();
         Console.Write("first name ->");
-        SetFName(Console.ReadLine());
+        FName = Console.ReadLine();
 
         Console.Write("last name ->");
-        SetLname(Console.ReadLine());
+        LName = Console.ReadLine();
 
         Console.Write("Phone Number (N/A if none) ->");
-        SetPhoneNumber(Console.ReadLine());
+        PhoneNumber = Console.ReadLine();
 
         Console.Write("jersey Number->");
-        SetNumber(Console.ReadLine());
+        Number = Console.ReadLine();
 
         Console.Write("Position ->");
-        SetPosition(Console.ReadLine());
+        Position = Console.ReadLine();
 
         Console.Write("Height ->");
-        SetHeight(Console.ReadLine());
+        Height = Console.ReadLine();
 
         Console.Write("Grade ->");
-        SetGrade(Console.ReadLine());
+        Grade = Console.ReadLine();
 
         Console.WriteLine("---Player Added---");
         Console.Write("Hit Enter to continue");
@@ -92,14 +76,14 @@ public class Player : People
 
     public string BasicPlayerInfo()
     {
-        return $"{GetFName()} {GetLname()}  #{GetNumber()}  {GetPosition()}";
+        return $"{FName} {LName}  #{Number}  {Position}";
     }
     public override void Displayinfo()
     {
         Console.WriteLine($"{BasicPlayerInfo()}");
-        Console.WriteLine($"Phone Number: {GetPhoneNumber()}");
-        Console.WriteLine($"Height: {GetHeight()}");
-        Console.WriteLine($"Grade: {GetGrade()}");
+        Console.WriteLine($"Phone Number: {PhoneNumber}");
+        Console.WriteLine($"Height: {Height}");
+        Console.WriteLine($"Grade: {Grade}");
     }
     
 

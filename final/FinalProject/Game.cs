@@ -19,16 +19,11 @@ public class Game
         _opponent = "N/A";
         _winLoss = false;
     }
-
-    public string GetOpponent()
+    public string Opponent
     {
-        return _opponent;
+        get{return _opponent;}
+        set{_opponent = value;}
     }
-    public void SetOpponent(string opponent)
-    {
-        _opponent = opponent;
-    }
-
     public string GetDate()
     {
         return _date;

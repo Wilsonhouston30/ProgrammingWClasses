@@ -6,12 +6,12 @@ public class Stats
     private int _shotsAttempted;
     private int _shotsMade;
     private int _threePointsAttempted;
-    private int _ThreePointsMade;
+    private int _threePointsMade;
     private int _rebounds;
     private int _turnovers;
     private int _minutes;
     private int _assists;
-public Stats(int points, int shotsAttempted, int threePointsAttempted, int rebounds, int turnovers, int minutes, int assists, int shotsMade, int ThreePointsMade)
+public Stats(int points, int shotsAttempted, int threePointsAttempted, int rebounds, int turnovers, int minutes, int assists, int shotsMade, int threePointsMade)
     {
         _points = points;
         _shotsAttempted = shotsAttempted;
@@ -21,7 +21,7 @@ public Stats(int points, int shotsAttempted, int threePointsAttempted, int rebou
         _turnovers = turnovers;
         _minutes = minutes;
         _assists = assists;
-        _ThreePointsMade = ThreePointsMade;
+        _threePointsMade = threePointsMade;
     }
     public Stats()
     {
@@ -33,7 +33,7 @@ public Stats(int points, int shotsAttempted, int threePointsAttempted, int rebou
         _minutes = 0;
         _assists = 0;
         _shotsMade = 0;
-        _ThreePointsMade = 0;
+        _threePointsMade = 0;
     }
 public int Points
 {
@@ -57,8 +57,8 @@ public int ThreePointsAttempted
 }
 public int ThreePointsMade
 {
-    get{return _ThreePointsMade;}
-    set{_ThreePointsMade = value;}
+    get{return _threePointsMade;}
+    set{_threePointsMade = value;}
 }
 public int Rebounds
 {
@@ -86,43 +86,62 @@ public void GetAllStats()
         Console.WriteLine("");
 
 
-        Console.WriteLine("Point(s): ");
+        Console.Write("Points: ");
         Points = Int32.Parse(Console.ReadLine());
 
-        Console.WriteLine("Shots Attempted");
+        Console.Write("Shots Attempted: ");
         ShotsAttempted = Int32.Parse(Console.ReadLine());
 
-        Console.WriteLine("Shots Made");
+        Console.Write("Shots Made: ");
         ShotsMade = Int32.Parse(Console.ReadLine());
 
-        Console.WriteLine("Three Points Attempted");
+        Console.Write("Three Points Attempted: ");
         ThreePointsAttempted = Int32.Parse(Console.ReadLine());
 
-        Console.WriteLine("Three Points Made");
+        Console.Write("Three Points Made: ");
         ThreePointsMade = Int32.Parse(Console.ReadLine());
 
-        Console.WriteLine("Rebounds");
+        Console.Write("Rebounds: ");
         Rebounds = Int32.Parse(Console.ReadLine());
 
-        Console.WriteLine("Turnovers");
+        Console.Write("Turnovers: ");
         Turnovers = Int32.Parse(Console.ReadLine());
 
-        Console.WriteLine("Minutes Played");
+        Console.Write("Minutes Played: ");
         Minutes = Int32.Parse(Console.ReadLine());
 
-        Console.WriteLine("Assists");
+        Console.Write("Assists: ");
         Assists = Int32.Parse(Console.ReadLine());
 
         Console.WriteLine("Done");
     }
+
+// Performance metrics
 public double GetShotPerc()
     {
-        return (double)_shotsAttempted / _shotsMade;
+        return (double)_shotsMade / _shotsAttempted * 100;
     }
 public double ThreePointPerc()
     {
-        return (double)_threePointsAttempted / _ThreePointsMade;
+        return (double)_threePointsMade / _threePointsAttempted * 100;
     }
+
+public double AssistToTurnoverRatio()
+{
+    return (double)Assists / Turnovers;
+}
+
+// Impact metrics
+
+public double PointsPerMinute()
+{
+    return Points / Minutes;
+}
+
+public double EffeciencyRating()
+{
+    return Points + Rebounds + Assists - Turnovers;
+}
 public void DisplayStats()
     {
         Console.WriteLine("Player Stats");

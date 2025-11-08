@@ -13,38 +13,29 @@ public class People
         _phoneNumber = phoneNumber;
     }
 
-    public void SetFName(string fname)
-    {
-        _fName = fname;
-    }
-
-    public string GetFName()
-    {
-        return _fName;    
-    }
-
-    public void SetLname(string lname)
-    {
-        _lName = lname;
-    }
-    public string GetLname()
-    {
-        return _lName;
-    }
-
-    public void SetPhoneNumber(string phoneNumber)
-    {
-        _phoneNumber = phoneNumber;
-    }
-
-    public string GetPhoneNumber()
-    {
-        return _phoneNumber;
-    }
+public string FName
+{
+    get{return _fName;}
+    set{_fName = value;}
+}
+public string LName
+{
+    get{return _lName;}
+    set{_lName = value;}
+}
+public string PhoneNumber
+{
+    get{return _phoneNumber;}
+    set{_phoneNumber = value;}
+}
 
 
     public virtual void  Displayinfo()
     {
-        Console.WriteLine($"Name {GetFName()} {GetLname()}");
+        Console.WriteLine($"Name {FName} {LName}");
+    }
+    public virtual void DisplayAllInfo()
+    {
+        Console.WriteLine($"Phone Number: {PhoneNumber}");
     }
 }

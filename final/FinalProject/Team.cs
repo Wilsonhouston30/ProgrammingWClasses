@@ -14,15 +14,11 @@ public class Team
         _teamName = "Unassigned";
     }
 
-    public void SetTeamName(string teamName)
-    {
-        _teamName = teamName;
-    }
-
-    public string GetTeamName()
-    {
-        return _teamName;
-    }
+public string TeamName
+{
+    get{return _teamName;}
+    set{_teamName = value;}
+}
 
     public void AddCoach()
     {
@@ -46,7 +42,7 @@ public class Team
         {
             if (_players[i] is Player player)
             {
-                Console.WriteLine($"{i}: {player.GetFName()}");
+                Console.WriteLine($"{i}: {player.FName}");
             }
         }
         Console.WriteLine("");
@@ -62,7 +58,7 @@ public class Team
         {
             if (_players[i] is Coach coach)
             {
-                Console.WriteLine($"{i}: {coach.GetFName()}");
+                Console.WriteLine($"{i}: {coach.FName}");
             }
         }
         Console.WriteLine("");
@@ -79,7 +75,7 @@ public class Team
 
     public void RosterView()
     {
-        Console.WriteLine($"{GetTeamName()}:");
+        Console.WriteLine($"{TeamName}:");
         Console.WriteLine("");
         Console.WriteLine("Coaches:");
         foreach(People person in _players)
@@ -105,10 +101,10 @@ public class Team
     }
     public void Save()
     {
-        string fileName = $"{GetTeamName()}_Roster.txt";
+        string fileName = $"{TeamName}_Roster.txt";
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
-            outputFile.WriteLine($"---- {GetTeamName()} -----");
+            outputFile.WriteLine($"---- {TeamName} -----");
             outputFile.WriteLine($"Coaches: ");
             outputFile.WriteLine("");
             foreach(People people in _players)
@@ -116,7 +112,7 @@ public class Team
                 
                 if (people is Coach coach)
                 {
-                outputFile.WriteLine($"{coach.GetFName()} {coach.GetLname()}");
+                outputFile.WriteLine($"{coach.FName} {coach.LName}");
                 outputFile.WriteLine();
                 }
             }
@@ -128,8 +124,8 @@ public class Team
             {
                 if (people is Player player)
                 {
-                    outputFile.WriteLine($"{player.GetFName()} {player.GetLname()} #{player.GetNumber()} Pos.{player.GetPosition()}");
-                    outputFile.WriteLine($"Height: {player.GetHeight()}");
+                    outputFile.WriteLine($"{player.FName} {player.LName} #{player.Number} Pos.{player.Position}");
+                    outputFile.WriteLine($"Height: {player.Height}");
                     outputFile.WriteLine("");
                 }
             }
@@ -141,7 +137,7 @@ public class Team
     {
         _players.Clear();
         Console.WriteLine();
-        string name = $"{GetTeamName()}_Roster.txt";
+        string name = $"{TeamName}_Roster.txt";
         
         string [] lines  = System.IO.File.ReadAllLines(name);
         foreach (string line in lines)

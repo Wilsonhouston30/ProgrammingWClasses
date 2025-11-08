@@ -16,24 +16,16 @@ public class Coach : People
         _accolades = "N/A";
     }
 
-    public void SetExpYrs(int years)
+    public int ExpYrs
     {
-        _expYrs = years;
+        get{return _expYrs;}
+        set{_expYrs = value;}
     }
 
-    public int GetExpYrs()
+    public string Accolades
     {
-        return _expYrs;
-    }
-
-    public void SetAccolades(string accolades)
-    {
-        _accolades = accolades;
-    }
-
-    public string GetAccolades()
-    {
-        return _accolades;
+        get{return _accolades;}
+        set{_accolades = value;}
     }
 
     public void GetCoachInfo()
@@ -41,13 +33,13 @@ public class Coach : People
         Console.WriteLine("Adding Coach");
         Console.WriteLine();
         Console.Write("first name ->");
-        SetFName(Console.ReadLine());
+        FName = Console.ReadLine();
 
         Console.Write("last name ->");
-        SetLname(Console.ReadLine());
+        LName = Console.ReadLine();
 
         Console.Write("Years of Experience: ");
-        SetExpYrs(int.Parse(Console.ReadLine()));
+        ExpYrs = Int32.Parse(Console.ReadLine());
 
         Console.WriteLine("---Coach Added---");
         Console.Write("Hit Enter to continue");
@@ -57,17 +49,13 @@ public class Coach : People
 
     public string BasicCoachInfo()
     {
-        return $"{GetFName()} {GetLname()} Exp. {GetExpYrs()} ";
+        return $"{FName} {LName} Exp. {ExpYrs} ";
     }
 
     public override void Displayinfo()
     {
         Console.WriteLine($"{BasicCoachInfo()}");
-        Console.WriteLine($"Exp {GetExpYrs()}");
-        Console.WriteLine($"Accolades{GetAccolades()}");
+        Console.WriteLine($"Exp {ExpYrs}");
+        Console.WriteLine($"Accolades{Accolades}");
     }
-
-
-
-
 }
